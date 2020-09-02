@@ -1,0 +1,105 @@
+
+@mixin borderRadius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin boxShadow($shadow) {
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+}
+
+@mixin transform($transform) {
+    transform: $transform;
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+}
+
+
+$buttonConfig:	'steelblue' $steelblue $lightColor,
+                'light' transparent $dimgray;
+
+@each $var in $buttonConfig {
+	.btn-#{nth($var, 1)} {
+		background-color: #{nth($var, 2)};
+        border-color: #{nth($var, 2)};
+        color: #{nth($var, 3)};     
+		&:hover, &:focus { 
+			background: #{nth($var, 2)};
+            border-color: #{nth($var, 2)};
+            color: #{nth($var, 3)}; 
+            @include boxShadow(0px 0px 10px rgba(21, 35, 56, 0.15));
+        }
+        &.disabled,
+        &:disabled {
+            background: #{nth($var, 2)};
+			border-color: #{nth($var, 2)};
+            pointer-events: none;
+            opacity: 0.5;
+        }
+		&:not(:disabled) {
+			&.active,&:active {
+				&:focus {
+					background: #{nth($var, 2)};
+			        border-color: #{nth($var, 2)};
+					box-shadow: none;
+				}
+			}
+			&:not(.disabled) {
+				&:active {
+					background: #{nth($var, 2)};
+			        border-color: #{nth($var, 2)};
+					&:focus {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+$buttonOutlineConfig:	'steelblue' transparent $steelblue $lightColor,
+                        'light' transparent $dimgray $lightColor;   
+
+@each $var in $buttonOutlineConfig {
+	.btn-outline-#{nth($var, 1)} {
+		background-color: #{nth($var, 2)};
+        border-color: #{nth($var, 3)};
+        color: #{nth($var, 3)};       
+		&:hover, &:focus { 
+			background: #{nth($var, 3)};
+            border-color: #{nth($var, 3)};
+            color: #{nth($var, 4)};
+            @include boxShadow(0px 0px 10px rgba(21, 35, 56, 0.15));
+        }
+        &:not(:disabled) {
+			&.active,&:active {
+				&:focus {
+					background: #{nth($var, 3)};
+                    border-color: #{nth($var, 3)};
+                    color: #{nth($var, 4)};
+				}
+			}
+			&:not(.disabled) {
+				&:active {
+					background: #{nth($var, 3)};
+                    border-color: #{nth($var, 3)};
+                    color: #{nth($var, 4)};
+					&:focus {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+    }
+}
