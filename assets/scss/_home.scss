@@ -1,6 +1,11 @@
 .question-progress {
-    background: rgba($crimson, 0.1);
+    background: $mistyrose;
     padding-top: 17px;
+    position: fixed;
+    top: 69px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .question-section {
@@ -112,10 +117,13 @@
 }
 
 @media (max-width: 991px) {
+    .question-progress {
+        top: 92px;
+    }
     .floating-box {
         position: fixed;
         top: 0;
-        z-index: 99;
+        z-index: 999;
         right: -400px;
         padding: 20px;
         background: $lightColor;
@@ -143,6 +151,16 @@
 }
 
 @media (max-width: 767px) {
+    .question-progress {
+        position: absolute;
+        h2 { font-size: 2.5rem; }
+    }
+    .scroll-element {
+        .question-progress {
+            position: fixed;
+            top: -5px;
+        }
+    }
     .action-saved {
         display: flex;
         align-items: center;

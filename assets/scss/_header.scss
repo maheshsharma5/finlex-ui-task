@@ -12,12 +12,9 @@
         margin-right: 30px;
     }
     .navbar-menuList {
-        display: flex;
-        align-items: center;
         .navbar-nav{
-            display: flex;
-            flex-direction: row;
             align-items: center;
+            flex-direction: row;
             margin: 0 -8px;
             > li {
                 padding: 0 8px;
@@ -142,7 +139,6 @@
 @media(max-width: 991px) {
     .header-cntr {
         padding: 26px 0 0;
-        z-index: 1;
         .navbar {
             position: static;
             padding: 12px 0;
