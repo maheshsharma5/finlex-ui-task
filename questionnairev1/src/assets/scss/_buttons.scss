@@ -1,0 +1,11 @@
+.finlex-light-skin {
+    * {
+        .finlex-btn-primary{
+            &:disabled {
+                background-color: #D1D1D1 !important; /* we can remove !important when merge css on fx-ng-themes */
+                border-color: #D1D1D1 !important;
+                color: #F8F8F8 !important;
+            }
+        }
+    }
+}

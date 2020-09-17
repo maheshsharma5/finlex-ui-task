@@ -1,0 +1,13 @@
+.modal-content{
+    &:not(.card-image) {
+        .close {
+            &.top-right {
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                font-weight: 400;
+                opacity: 1;
+            }
+        }
+    }
+}

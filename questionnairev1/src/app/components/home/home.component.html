@@ -1,0 +1,82 @@
+<div class="d-flex align-items-stretch flex-fill mfe-content-wrapper pt-3 h-100">
+    <div class="flex-fill px-3 pt-3 w-100 ng-tns-c196-0 ng-trigger ng-trigger-routerTransitionRight">
+        <h1>Create your Risk Assessment Questionnaire</h1>
+        <div class="mt-4">
+            <finlex-radio 
+                class="fx-inline-control" 
+                groupName="questionnaireType" 
+                [options]=questionnaireOptions
+                selected=""
+                (formGroupChange)="setQuestionnaireType($event)">
+            </finlex-radio>
+            <!-- {{selectedOption | json }} -->
+            <div class="row" *ngIf="selectedOption.questionnaireType === 'csv'">
+                <div class="col-12 col-md-10">
+                    <finlex-stepper class="stepper-style-two" [isEditable]=false [isLinear]=false [isVertical]=true [steps]=stepperOptions>
+                        <ng-template #step let-stepper let-index="index">
+                            <!-- STEP 0 -->
+                            <ng-container *ngIf="index === 0">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <a href="./../../../assets/sample.csv"><img class="img-fluid" src="./../../../assets/upload-csv.png" alt="Upload CSV" /></a>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 align-self-center mt-3 mt-md-0">
+                                        <p class="text-uppercase">Please download the preset version for CSV and replace your questions.</p>
+                                    </div>
+                                    <div class="col-12 col-lg-4 align-self-end mt-3">
+                                        <div class="d-flex flex-column flex-sm-row">
+                                            <div class="flex-column p-1">
+                                                <finlex-button type="primary" size="sm" (buttonClick)="openModal()">Watch Tutorial</finlex-button>
+                                            </div>
+                                            <div class="flex-column p-1">
+                                                <finlex-button type="primary" size="sm" (buttonClick)="stepper.next()">Go next</finlex-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+        
+                            <!-- STEP 1 -->
+                            <ng-container *ngIf="index === 1">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <finlex-file-upload *ngIf="!csvFile"
+                                            (selectedFile)="getCSV($event)" class="d-block file-upload-lg"
+                                            [fileTypes]='validCSV'>
+                                        </finlex-file-upload>
+                                        <div *ngIf="csvFile" class="uploaded-file-info">
+                                            <div class="d-flex justify-content-between">
+                                                <mdb-icon class="mr-2" fas icon="file-csv" size="lg"></mdb-icon>
+                                                <span class="flex-grow-1 mr-2">{{csvFile[0]?.name}}</span>
+                                                <mdb-icon class="remove-file" fas icon="window-close" (click)="removeCsv()" size="lg"></mdb-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 align-self-end mt-3 mt-sm-0">
+                                        <p class="text-uppercase text-center">Please Upload your Edited CSV File.</p>
+                                    </div>
+                                    <div class="col-12 text-right mt-5">
+                                        <finlex-button  
+                                            type="primary"
+                                            [size]=sm
+                                            [disabled]=!csvUploaded>
+                                            See Questionnare</finlex-button>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </ng-template>
+                    </finlex-stepper>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- <div mdbModal #tutorialModal="mdbModal" class="modal" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    
+
+  </div>
+</div> -->

@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
   title = 'questionnairev1';
+  options= [{ id: 'first', label: 'first', value: 'male' }];
   ngOnInit(): void {
     const head = document.getElementsByTagName('head')[0];
     
