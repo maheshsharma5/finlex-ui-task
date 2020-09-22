@@ -11,29 +11,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TutorialModalComponent } from './tutorial-modal/tutorial-modal.component';
 import { Questionnairev2Component } from './components/questionnairev2/questionnairev2.component';
+import { CreateQuestionnaireComponent } from './components/create-questionnaire/create-questionnaire.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TutorialModalComponent,
-    Questionnairev2Component
+    Questionnairev2Component,
+    CreateQuestionnaireComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    // QuillModule.forRoot({
-    //   customModules: [{
-    //     implementation: Counter,
-    //     path: 'modules/counter'
-    //   }],
-    //   customOptions: [{
-    //     import: 'formats/font',
-    //     whitelist: ['mirza', 'roboto', 'aref', 'serif', 'sansserif', 'monospace']
-    //   }]
-    // }),
     TranslateModule.forRoot(),
     NgToolsModule,
     MDBBootstrapModulesPro.forRoot()
