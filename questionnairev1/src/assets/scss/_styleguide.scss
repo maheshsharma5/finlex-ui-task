@@ -1,0 +1,17 @@
+$theme_fx_brand_1: #AB2828;
+
+// Border Colors
+.border-brand-1 {
+    border-color: $theme_fx_brand_1 !important;
+}
+
+@media(max-width: 767px) {
+    .border-sm-0 {
+        border: none !important;
+    }
+}
+
+// Text Colors
+.text-brand-1 {
+    color: $theme_fx_brand_1 !important;
+}

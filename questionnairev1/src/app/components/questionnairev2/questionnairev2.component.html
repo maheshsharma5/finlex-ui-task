@@ -1,0 +1,80 @@
+<div class="d-flex align-items-stretch flex-fill mfe-content-wrapper pt-3 h-100">
+    <div class="flex-fill px-3 pt-3 w-100 ng-tns-c196-0 ng-trigger ng-trigger-routerTransitionRight">
+        <div class="row">
+            <div class="col-12 col-lg-7 col-md-12">
+                <mdb-card class="z-depth-0 rounded-0">
+                    <!--Card content-->
+                    <mdb-card-body class="text-center">
+                        <!--Text-->
+                        <h1>Create your first Risk Assessment Questionnaire</h1>
+                        <!-- Select Create Method for Questionnaire -->
+                        <form *ngIf="questionnaireStatus===0 || questionnaireStatus===1" [formGroup]="questionnaireForm"
+                            class="mb-4">
+                            <span class="d-block text-uppercase font-weight-normal mb-4">Select your preferred creation
+                                method:</span>
+                            <div class="row">
+                                <div class="custom-radio inline-radio col-md-6 d-flex justify-content-center align-items-center flex-column" [class]="option.groupclass"
+                                    *ngFor="let option of questionnaireOptions">
+                                    <label class="form-check-label mb-3" [for]="option.id"><img [src]="option.image"
+                                            [alt]="option.label" class="mx-auto d-block img-fluid" /></label>
+                                    <input type="radio" class="form-check-input with-gap" [value]="option.value"
+                                        formControlName="questionnaireType" name="questionnaireType" [id]="option.id"
+                                        required mdbInput>
+                                    <label class="form-check-label" [for]="option.id">{{ option.label }}</label>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div *ngIf="questionnaireType==='csv'">
+                            <!-- Download Preset CSV File -->
+                            <div *ngIf="questionnaireStatus===2">
+                                <span class="d-block text-uppercase font-weight-normal mb-4">Download Preset CSV</span>
+                                <a
+                                    href="./../../../assets/sample.csv" class="d-block text-brand-1"><img src="./../../../assets/images/upload-csvv2.png" alt="upload csv"
+                                    class="mx-auto d-block img-fluid mb-4" /></a>
+                                <p>You may want to download the preset version for CSV and replace your questions. <a
+                                        href="./../../../assets/sample.csv" class="d-block text-brand-1">Download
+                                        now.</a></p>
+                            </div>
+                            <!-- Download Upload Updated CSV File -->
+                            <div *ngIf="questionnaireStatus===3">
+                                <span class="d-block text-uppercase font-weight-normal mb-4">Upload your CSV file</span>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8 mb-5">
+                                        <finlex-file-upload *ngIf="!csvFile" (selectedFile)="getCSV($event)"
+                                            class="d-block file-upload-lg" [fileTypes]='validCSV'>
+                                        </finlex-file-upload>
+                                        <div *ngIf="csvFile" class="uploaded-file-info">
+                                            <div class="d-flex justify-content-between text-left">
+                                                <mdb-icon class="mr-2" fas icon="file-csv" size="lg"></mdb-icon>
+                                                <span class="flex-grow-1 mr-2">{{csvFile[0]?.name}}</span>
+                                                <mdb-icon class="remove-file" fas icon="window-close"
+                                                    (click)="removeCsv()" size="lg"></mdb-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="d-flex justify-content-center">
+                            <!-- Go Back to previous Step -->
+                            <div class="flex-column p-1">
+                                <finlex-button type="secondary" size="sm"
+                                    (buttonClick)="updateQuestionnaireState('prev')"
+                                    [disabled]="questionnaireStatus <= 1">Go back
+                                </finlex-button>
+                            </div>
+                            <!-- Go to next Step -->
+                            <div class="flex-column p-1">
+                                <finlex-button type="primary" size="sm" (buttonClick)="updateQuestionnaireState('next')"
+                                    [disabled]="(!questionnaireStatus || questionnaireType !== 'csv' && questionnaireStatus!=3) || (questionnaireStatus==3 && !csvUploaded)">
+                                    Go next</finlex-button>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+        </div>
+    </div>
+</div>
