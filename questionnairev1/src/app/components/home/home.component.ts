@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TutorialModalComponent } from './../../tutorial-modal/tutorial-modal.component';
+import { TutorialModalComponent } from '../../modals/tutorial-modal/tutorial-modal.component';
 import { MDBModalRef, MDBModalService } from 'ng-uikit-pro-standard';
 
 @Component({

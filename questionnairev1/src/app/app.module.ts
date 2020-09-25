@@ -9,7 +9,8 @@ import { NgToolsModule } from '@finlex/ng-tools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { TutorialModalComponent } from './tutorial-modal/tutorial-modal.component';
+import { TutorialModalComponent } from './modals/tutorial-modal/tutorial-modal.component';
+import { AddNewQuestionModalComponent } from './modals/add-new-question-modal/add-new-question-modal.component';
 import { Questionnairev2Component } from './components/questionnairev2/questionnairev2.component';
 import { CreateQuestionnaireComponent } from './components/create-questionnaire/create-questionnaire.component';
 
@@ -18,6 +19,7 @@ import { CreateQuestionnaireComponent } from './components/create-questionnaire/
     AppComponent,
     HomeComponent,
     TutorialModalComponent,
+    AddNewQuestionModalComponent,
     Questionnairev2Component,
     CreateQuestionnaireComponent
   ],
