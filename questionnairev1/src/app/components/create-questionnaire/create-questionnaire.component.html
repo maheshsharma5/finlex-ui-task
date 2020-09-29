@@ -41,5 +41,36 @@
                 </finlex-button>
             </div>
         </div>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <mdb-card class="z-depth-0 rounded-0">
+                    <mdb-card-body>
+                        <!--Title-->
+                        <mdb-card-title>
+                            <h3 class="number-heading pr-6 position-relative mb-3 mt-2">
+                                <span class="d-inline-block text-center mr-2">1</span>My question is this?
+                                <div class="finlex-icon-group d-flex align-items-center">
+                                    <finlex-button type="link" size="sm">
+                                        <mdb-icon far icon="trash-alt"></mdb-icon>
+                                    </finlex-button>
+                                    <finlex-button type="link" size="sm">
+                                        <mdb-icon fas icon="pen"></mdb-icon>
+                                    </finlex-button>
+                                </div>
+                            </h3>
+                        </mdb-card-title>
+
+                        <div class="mb-2 pb-3 border-bottom border-brand-1">
+                            <finlex-radio 
+                                groupName="myquestionType" 
+                                [options]=myquestionOptions
+                                selected="">
+                            </finlex-radio>
+                        </div>
+                        
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+        </div>
     </div>
 </div>

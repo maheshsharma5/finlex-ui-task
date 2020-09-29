@@ -1,11 +1,143 @@
 <!--Body-->
-<button type="button" class="close top-right" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+<!-- <button type="button" class="close top-right" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true" class="white-text">
         <mdb-icon fas icon="times" size="lg"></mdb-icon>
     </span>
-</button>
+</button> -->
+<!--Header-->
+<div class="modal-header">
+    <p class="heading lead">ADD NEW QUESTION</p>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+      <!-- <span aria-hidden="true" class="white-text">×</span> -->
+      <mdb-icon fas icon="times" size="sm" class="white-text"></mdb-icon>
+    </button>
+</div>
 <div class="modal-body mb-0 p-0">
-    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U" allowfullscreen></iframe>
+    <div class="add-new-question">
+        <h3 class="mb-3">General Information</h3>
+        <div class="finlex-texticon-group position-relative">
+            <finlex-text-box type="text" placeholder="Question*" class="finlex-grey-control"></finlex-text-box>
+            <div class="finlex-icon-group">
+                <finlex-button type="link" class="border-brand-1" size="sm">
+                    <i class="fas fa-info-circle"></i>
+                </finlex-button>
+                <finlex-button type="link" class="border-brand-1" size="sm">
+                    <i class="icon-symbol"></i>
+                </finlex-button>
+            </div>
+        </div>
+        <div class="finlex-texticon-group position-relative">
+            <finlex-text-box type="text" placeholder="Description" class="finlex-grey-control"></finlex-text-box>
+            <div class="finlex-icon-group">
+                <finlex-button type="link" size="sm">
+                    <i class="fas fa-info-circle"></i>
+                </finlex-button>
+                <finlex-button type="link" size="sm">
+                    <i class="icon-symbol"></i>
+                </finlex-button>
+            </div>
+        </div>
+
+        <div class="row mx-n1">
+            <div class="col-md-5 px-1">
+                <div class="d-flex align-items-center position-relative finlex-selecticon-group">
+                    <finlex-dropdown [options]=answerType placeholder="Select answer type*" control="answerTypegroup"></finlex-dropdown>
+                    <div class="finlex-icon-group">
+                        <finlex-button type="link" size="sm">
+                            <i class="fas fa-info-circle"></i>
+                        </finlex-button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 px-1">
+                <div class="d-flex align-items-center position-relative finlex-selecticon-group">
+                    <finlex-dropdown [options]=stepType placeholder="Step 1" control="stepTypeGroup"></finlex-dropdown>
+                    <div class="finlex-icon-group">
+                        <finlex-button type="link" size="sm">
+                            <i class="fas fa-info-circle"></i>
+                        </finlex-button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 px-1">
+                <div class="finlex-texticon-group position-relative sm-pd-r30">
+                    <finlex-text-box type="text" placeholder="Label" class="finlex-grey-control"></finlex-text-box>
+                    <div class="finlex-icon-group">
+                        <finlex-button type="link" size="sm">
+                            <i class="fas fa-info-circle"></i>
+                        </finlex-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-more-answer">
+            <div class="row mx-n1">
+                <div class="col-md-8 px-1">
+                    <div class="finlex-texticon-group position-relative sm-pd-r30">
+                        <finlex-text-box type="text" value="A: Yes" class="finlex-grey-control"></finlex-text-box>
+                        <div class="finlex-icon-group">
+                            <finlex-button type="link" size="sm">
+                                <i class="far fa-trash-alt"></i>
+                            </finlex-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="d-flex align-items-center position-relative finlex-selecticon-group finlex-selecticon-left">
+                        <finlex-dropdown [options]=riskassessment placeholder="Risk Assessment" control="riskassessmentGroup"></finlex-dropdown>
+                        <div class="finlex-icon-group">
+                            <finlex-button type="link" size="sm">
+                                <mdb-icon fas icon="flag"></mdb-icon>
+                            </finlex-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-n1">
+                <div class="col-md-8 px-1">
+                    <div class="finlex-texticon-group position-relative sm-pd-r30">
+                        <finlex-text-box type="text" value="B: No" class="finlex-grey-control"></finlex-text-box>
+                        <div class="finlex-icon-group">
+                            <finlex-button type="link" size="sm">
+                                <i class="far fa-trash-alt"></i>
+                            </finlex-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="d-flex align-items-center position-relative finlex-selecticon-group finlex-selecticon-left">
+                        <finlex-dropdown [options]=riskassessment placeholder="Risk Assessment" control="riskassessmentGroup"></finlex-dropdown>
+                        <div class="finlex-icon-group">
+                            <finlex-button type="link" size="sm">
+                                <mdb-icon fas icon="flag"></mdb-icon>
+                            </finlex-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-n1">
+                <div class="col-md-8 px-1">
+                    <div class="finlex-texticon-group position-relative sm-pd-r30">
+                        <finlex-text-box type="text" placeholder="Add new answer choice" class="finlex-grey-control"></finlex-text-box>
+                        <div class="finlex-icon-group">
+                            <finlex-button type="link" size="sm">
+                                <i class="fas fa-plus"></i>
+                            </finlex-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 pt-4 border-top border-brand-2">
+            <div class="mb-3 finlex-dropdown-full"><finlex-dropdown [options]=configureanswer placeholder="Configuration of answer A" control="configureGroup"></finlex-dropdown></div>
+            <div class="finlex-dropdown-full"><finlex-dropdown [options]=configureanswer placeholder="Configuration of answer B" control="configureGroup"></finlex-dropdown></div>
+        </div>
+        <div class="mt-4 pt-4 border-top border-brand-2">
+            <div class="d-flex align-items-center">
+                <finlex-button type="primary" size="sm" disabled="true">Create</finlex-button>
+                <finlex-checkbox class="ml-3" label="save question in library"></finlex-checkbox>
+            </div>
+        </div>
     </div>
 </div>

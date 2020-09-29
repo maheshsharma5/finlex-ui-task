@@ -11,3 +11,151 @@
         }
     }
 }
+
+.modal-dialog{
+    &.modal-notify {
+        &.modal-info {
+            .modal-header {
+                background: $theme_fx_brand_1 !important;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 21px;
+                padding: 20px 50px 20px 30px;
+            }
+        }
+        .modal-body {
+            background: $shared_neutral_light_3 !important;
+        }
+    }
+}
+
+.modal-notify-new {
+    &.modal-dialog{
+        &.modal-notify {
+            width: 700px;
+        }
+    }
+    .modal-content{
+        &:not(.card-image) {
+            .close {
+                right: 50px;
+                padding: 0;
+                top: 37px;
+            }
+        }
+    }
+}
+
+.add-new-question {
+    padding: 2.1875rem 1.5625rem 2.1875rem 2.1875rem;
+    .finlex-texticon-group {
+        padding-right: 3.4375rem;
+        &.sm-pd-r30 { padding-right: 1.875rem; }
+        i {
+            font-size: 0.875rem;
+            color: $theme_fx_accent_1 !important;
+            &.icon-symbol {
+                color: $text-color !important;
+                font-weight: 900;
+            }
+        }
+        .finlex-icon-group {
+            .fx-btn {
+                padding: 0 0.25rem;
+            }
+        }
+    }
+    .finlex-grey-control {
+        .form-group {
+            margin-bottom: 1.875rem;
+        }
+        .form-control{
+            &.finlex-input {
+                padding: 0.625rem 0.75rem;
+                height: 41px;
+                font-size: 0.75rem;
+                border: 1px solid $shared_neutral_light_1 !important;
+                border-radius: 2px;
+                background: transparent !important;
+            }
+        }
+    }
+    .add-more-answer {
+        .finlex-grey-control {
+            .form-group {
+                margin-bottom: 0.625rem;
+            }
+            .form-control{
+                &.finlex-input {
+                    padding: 0.4375rem;
+                    height: 30px;
+                    font-size: 0.75rem;
+                    border: 1px solid $theme_fx_shade_4 !important;
+                    background: $shared_neutral_light_2 !important;
+                }
+            }
+        }
+    }
+    .custom-checkbox {
+        display: inline-flex;
+        .custom-control-input {
+            ~ .custom-control-label{
+                font-size: 0.75rem;
+                &:before {
+                    top: 0.125rem;
+                }
+                &:after {
+                    top: 0.125rem;
+                }
+            }
+        }
+    }
+    .finlex-selecticon-group {
+        finlex-dropdown {
+            width: calc(100% - 24px);
+            .finlex-select {
+                padding: 0 !important;
+            }
+            .form-control {
+                width: calc(100% - 10px);
+                margin: 0;
+                padding-left: 10px !important;
+            }
+            .mdb-select-placeholder, .mdb-select-value-label span {
+                font-size: 14px;
+            }
+            .mdb-select-arrow {
+                right: 8px;
+            }
+        }
+        .finlex-icon-group {
+            .fx-btn {
+                padding: 0;
+                font-size: 14px;
+            }
+            .fas { color: $theme_fx_accent_1 !important; }
+        }
+    }
+    .finlex-selecticon-left {
+        finlex-dropdown {
+            margin-left: auto;
+            .mdb-select-wrapper {
+                height: 30px;
+            }
+            .form-control{
+                padding-left: 0 !important;
+                padding: 0;
+                height: 30px !important;
+                border: none !important;
+            }
+            .mdb-select-arrow {
+                top: 7px;
+            }
+        }
+        .finlex-icon-group {
+            left: 0;
+            right: auto;
+            .fas { color: #A3A3A3 !important; }
+        }  
+    }
+}

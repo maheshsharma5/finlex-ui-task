@@ -1,8 +1,52 @@
 $theme_fx_brand_1: #AB2828;
 
+$shared_neutral_light_1: #D1D2D1;
+$shared_neutral_light_2: #F8F8F8;
+$theme_fx_accent_1: #3B7DAD;
+$text-color: #D1766B;
+$theme_fx_shade_3: #E0A199;
+$theme_fx_shade_4: #ECD0CC;
+$shared_neutral_light_3: #FFFFFF;
+
 // Border Colors
 .border-brand-1 {
     border-color: $theme_fx_brand_1 !important;
+}
+
+.border-brand-2 {
+    border-color: $theme_fx_shade_3 !important;
+}
+
+.number-heading {
+   color: $text-color !important;
+   span {
+        width: 17px;
+        height: 17px;
+        border-radius: 2px;
+        background: $theme_fx_brand_1;
+        font-size: 0.875rem;
+        line-height: 14px;
+        letter-spacing: 0.04em;
+        color: $shared_neutral_light_3;
+        padding: 3px;
+    }
+    .finlex-icon-group {
+        .fx-btn {
+            padding: 0 0.25rem;
+            
+        }
+    }
+}
+
+.finlex-icon-group {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.finlex-dropdown-full {
+    .finlex-select { padding: 0 !important; }
 }
 
 @media(max-width: 767px) {
